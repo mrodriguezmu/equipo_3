@@ -74,6 +74,7 @@ Probamos otras métricas como F1 score, precisión y recall. Sin embargo, estas 
 
 | Accuracy | F1 score | Precisión | Recall|
 |------|---------|-------|-------| 
+| 0.817351 | 0.0 | 0.0 | 0.0 |
 
 ## Análisis de los resultados
 
