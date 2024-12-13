@@ -65,11 +65,15 @@ La variable objetivo es Arr_Delayed, la cual es una variable binaria que indica 
 
 ### Métricas de evaluación
 
-Descripción de las métricas utilizadas para evaluar el rendimiento del modelo.
+La métrica principal usada para la evaluación del modelo son:
+- Accuracy: que calcula la proporción de predicciones correctas sobre el total de observaciones
+
+Probamos otras métricas como F1 score, precisión y recall. Sin embargo, estas métricas nos dan 0. Esto se debe a que existe un fuerte desbalanceo en los datos, debido a que son muy pocos los vuelos atrasados en comparación con los no atrasados. Para solucionar este problema debemos retroceder unos pasos y usar métodos oversalmpling de la clase minoritaria o el ajuste de los pesos de las clases. Sin embargo, por temas de tiempo realizaremos esta corrección para la siguiente etapa.
 
 ### Resultados de evaluación
 
-Tabla que muestra los resultados de evaluación del modelo baseline, incluyendo las métricas de evaluación.
+Accuracy | F1 score | Precisión | Recall
+
 
 ## Análisis de los resultados
 
