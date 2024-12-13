@@ -1,14 +1,12 @@
 # Reporte del Modelo Baseline
 
-Este documento contiene los resultados del modelo baseline.
-
 ## Descripción del modelo
 
-El modelo baseline es el primer modelo construido y se utiliza para establecer una línea base para el rendimiento de los modelos posteriores.
+Teniendo en cuenta que lo que buscamos con nuestros modelos es predecir qué vuelos van a llegar atrasados y cuales no, es decir, basicamente una tarea de clasificación, nuestro modelo baseline va a ser una regresión logística. De esta forma, a partir de las distintas características de los vuelos, el modelo nos brindará la probabilidad de que estos lleguen atrasados o no.
 
 ## Variables de entrada
 
-Lista de las variables de entrada utilizadas en el modelo.
+
 
 ## Variable objetivo
 
