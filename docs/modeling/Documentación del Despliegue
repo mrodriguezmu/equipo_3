@@ -1,0 +1,91 @@
+Documentación del Despliegue
+1. Introducción
+
+Esta documentación describe el proceso de despliegue del modelo de predicción de retrasos en vuelos utilizando Flask.
+El modelo permite a los usuarios enviar solicitudes con características específicas de un vuelo y recibir predicciones sobre si el vuelo se retrasará o no.
+
+2. Requisitos
+Python: Versión 3.x.
+Bibliotecas:
+Flask: Para crear la API.
+scikit-learn: Para manejar el modelo.
+joblib: Para guardar y cargar el modelo.
+numpy
+
+Puedes instalar las bibliotecas necesarias usando pip:
+pip install flask scikit-learn joblib numpy
+
+3. Estructura del Proyecto
+La organización del proyecto debe verse
+
+/flight_delay_prediction
+    ├── app.py                   # Archivo principal para la API
+    ├── model.pkl                # Modelo entrenado guardado
+    ├── requirements.txt         # Lista de dependencias
+    └── data/                    # Carpeta para datos (opcional)
+
+
+
+4. Guardar el Modelo
+Asegúrate de guardar tu modelo entrenado como model.pkl usando el siguiente código:
+import joblib
+joblib.dump(model_rf, 'model.pkl')
+
+5. Crear el Archivo app.py
+Código necesario para crear el archivo app.py, que contendrá la lógica de la API.
+
+from flask import Flask, request, jsonify
+import os
+
+app = Flask(__name__)
+
+# Cargar el modelo entrenado
+model_path = os.path.join(os.getcwd(), 'model.pkl')  # Asegúrate de que este sea el path correcto
+model = joblib.load(model_path)
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    # Obtener los datos del cuerpo de la solicitud
+    data = request.get_json(force=True)
+    
+    # Asegúrate de que los datos recibidos sean correctos (ajusta según tus características)
+    features = np.array(data['features']).reshape(1, -1)  # Ajusta según las características esperadas
+    
+    # Realizar la predicción
+    prediction = model.predict(features)
+    
+    return jsonify({'prediction': bool(prediction[0])})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+6. Crear el Archivo requirements.txt
+Instrucciones sobre cómo crear un archivo requirements.txt que contenga las dependencias necesarias:
+
+flask
+scikit-learn
+joblib
+numpy
+
+Puedes generar automáticamente este archivo ejecutando:
+
+pip freeze > requirements.txt
+
+
+7. Ejecutar la Aplicación
+Instrucciones sobre cómo iniciar la aplicación:
+Abre una terminal en el directorio donde se encuentra app.py.
+Ejecuta el siguiente comando:
+python app.py
+
+La aplicación estará disponible en http://127.0.0.1:5000.
+
+8. Probar la API
+Proporciona ejemplos sobre cómo probar la API usando herramientas como Postman o cURL:
+
+curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d '{"features": [value1, value2, value3, ...]}'
+
+9. Notas Adicionales
+
+Advertencia sobre producción: Recuerda que el servidor Flask proporcionado es adecuado solo para desarrollo y no debe usarse en producción. 
+Para un entorno de producción, considera usar un servidor WSGI como Gunicorn o uWSGI.
