@@ -59,33 +59,37 @@ Teniendo en cuenta la gran cantidad de variables, así como el gran número de o
 
 ## Variable objetivo
 
-La variable objetivo es Arr_Delayed, la cual es una variable binaria que indica si el vuelo llegó atrasado (1) o a tiempo (0).
+La variable objetivo es Arr_Delayed, la cual es una variable binaria que indica si el vuelo llegó atrasado (1) o a tiempo (0). 
+
+Se observa que existe un desbalanceo en esta variable; existen pocas observaciones para las cuales Arr_Delayed = 1, es decir, pocos vuelos llegaron atrasados. Por ello, se generaron observaciones sintéticas de vuelos atrasados por medio de SMOTE para evitar problemas con los modelos.
 
 ## Evaluación del modelo
 
 ### Métricas de evaluación
 
-La métrica principal usada para la evaluación del modelo son:
-- Accuracy: que calcula la proporción de predicciones correctas sobre el total de observaciones
-
-Probamos otras métricas como F1 score, precisión y recall. Sin embargo, estas métricas nos dan 0. Esto se debe a que existe un fuerte desbalanceo en los datos, debido a que son muy pocos los vuelos atrasados en comparación con los no atrasados. Para solucionar este problema debemos retroceder unos pasos y usar métodos oversalmpling de la clase minoritaria o el ajuste de los pesos de las clases. Sin embargo, por temas de tiempo realizaremos esta corrección para la siguiente etapa.
+Las métricas principales usadas para la evaluación del modelo son:
+- Accuracy: que calcula la proporción de predicciones correctas sobre el total de observaciones.
+- Precision: que es la proporción de predicciones positivas correctas.
+- Recall: proporción de predicciones correctas entre todas las predicciones.
+- F1 Score: la media armónica entre la precisión y el recall.
 
 ### Resultados de evaluación
 
 | Accuracy | F1 score | Precisión | Recall|
 |------|---------|-------|-------| 
-| 0.817351 | 0.0 | 0.0 | 0.0 |
+| 0.521569 | 0.273979 | 0.192294 | 0.476308 |
 
 ## Análisis de los resultados
 
-Descripción de los resultados del modelo baseline, incluyendo fortalezas y debilidades del modelo.
+En general las métricas muestran que el modelo no presenta un buen desempeño. El accuracy indiica que el modelo tiene problemas para capturar patrones de los datos, mientras que el F1 score, la precisión y el recall indican que tiene problemas para predecir correctamente las observaciones de la clase positiva.
+
+La principal fortaleza del modelo es que es un modelo sencillo, fácil de interpretar y eficiente computacionalmente. Sin embargo, en parte esta también es su mayor debilidad, ya que el modelo no es capaz de capturar relaciones complejas (por ejemplo, no lineales) en los datos, lo que explica los pobres resultados de las métricas.
 
 ## Conclusiones
 
-Conclusiones generales sobre el rendimiento del modelo baseline y posibles áreas de mejora.
+En general el modelo baseline tiene dificultades para manejar los datos, y por ello es poco confiable al momento de predecir si un vuelo estará o no atrasado. Por ello, la principal área de mejora radica en utilizar otros modelos capaces de capturar más adecuadamente las relaciones complejas en los datos.
 
 ## Referencias
 
-Lista de referencias utilizadas para construir el modelo baseline y evaluar su rendimiento.
-
-Espero que te sea útil esta plantilla. Recuerda que puedes adaptarla a las necesidades específicas de tu proyecto.
+modelo: https://scikit-learn.org/1.5/modules/linear_model.html
+métricas: https://scikit-learn.org/1.5/api/sklearn.metrics.html
