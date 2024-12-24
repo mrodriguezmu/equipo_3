@@ -38,7 +38,7 @@ El segundo gran problema, derivado del ya mencionado, es el desbalance en la var
   
 Loa lección principal es que, cuando se quiere trabajar con grandes volúmenes de información, pero no se cuenta con los equipos necesarios para ello, es necesario aplicar métodos que sean capaces de procesar los datos de forma eficiente sin perder la mayor cantidad de información posible (como componentes principales). Igualmente, estas relaciones complejas de los datos hacen que la selección del modelo deba ser cuidadosa, ya que si bien se puden implementar modelos más sencillos, que a su vez serán más eficientes, estos pueden no capturar las relaciones adecuadas de los datos y por ello prsentar buenos desempeños. Mientras que, otros modelos que si son capaces de capturar estas relaciones, pueden ser demasiados complejos y poco eficientes computacionalmente.
 
-Por ello hay que encontrar un euqilibrio entre eficiencia y desempeño.
+Por ello hay que encontrar un equilibrio entre eficiencia y desempeño.
 
 - Recomendaciones para futuros proyectos de machine learning.
   
