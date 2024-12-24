@@ -6,20 +6,16 @@ En esta sección se presentará un resumen de los resultados obtenidos del model
 
 El modelo final seleccionado es un RandomForestClassifier, el cual mostró un rendimiento superior en comparación con otros modelos evaluados. Las métricas de evaluación obtenidas fueron:
 
-- **Accuracy:** 0.778
-- **F1 Score:** 0.157
-- **Precision:** 0.258
-- **Recall:** 0.113
+- **Accuracy:** 0.756662
+- **F1 Score:** 0.396130
+- **Precision:** 0.373940
+- **Recall:** 0.421120
 
 ## Descripción del Problema
 
-En esta sección se describirá el problema que se buscó resolver con el modelo final. Se debe incluir una descripción detallada del problema, el contexto en el que se desarrolla, los objetivos que se persiguen y la justificación del modelo.
-
-El objetivo del proyecto es predecir los retrasos en los vuelos utilizando datos históricos de vuelos. La precisión del modelo es crucial para mejorar la planificación y la gestión de los vuelos, reduciendo así los costos y mejorando la satisfacción del cliente.
+El objetivo del proyecto es predecir los retrasos en los vuelos utilizando datos históricos de vuelos. La precisión del modelo es crucial para mejorar la planificación y la gestión de los vuelos, reduciendo así los costos y mejorando la satisfacción del cliente. Teniendo en cuenta que el modelo baseline presentó problemas en las métricas, se buscó un modelo que pudiera capturar de forma más apropiada las relaciones no lineales de los datos. Por ello, probamos el modelo de RandomForestClassifier.
 
 ## Descripción del Modelo
-
-En esta sección se describirá el modelo final que se desarrolló para resolver el problema planteado. Se debe incluir una descripción detallada del modelo, la metodología utilizada y las técnicas empleadas.
 
 El modelo final es un RandomForestClassifier. Se seleccionó este modelo debido a su capacidad para manejar grandes conjuntos de datos y su robustez frente a la multicolinealidad de las variables.
 
