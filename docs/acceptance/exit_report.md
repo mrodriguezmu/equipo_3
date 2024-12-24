@@ -29,25 +29,38 @@ El modelo en general presenta un desempeño moderado. El accuaracy indica que la
 ## Lecciones aprendidas
 
 - Identificación de los principales desafíos y obstáculos encontrados durante el proyecto.
+  
 A lo largo del proyecto, se presentaron dos obstáculos principales: el primero de ellos es la gran cantidad de información con la que se cuenta. Dada la gran extensión de la base de datos original (millones de observaciones y más de 50 variables) fue necesario omitir información en pro de la eficiencia computacional. Por ello nos vimos obligados a trabajar con menos del 5% de la información total de la que disponiamos, solamente para que nuestros equipos pudieran procesar los datos. Esto también afecto los modelos utilizados, ya que, por ejemplo, quisimos utilizar más modelos como support vector machines, pero no fue posible debido a los prolongados tiempos para correr los códigos.
+
 El segundo gran problema, derivado del ya mencionado, es el desbalance en la variable objetivo; contabamos con muy pocos datos de vuelos atrasados, lo cual generó que nuestros primeros modelos fueran casi que obsoletos. Para ello tuvimos que generar datos sintéticos de vuelos atrasados, lo cual en últimas permitió que que los modelos fueran aplicables, pero que isn duda afectó su desempeño.
+
 - Lecciones aprendidas en relación al manejo de los datos, el modelamiento y la implementación del modelo.
+  
 Loa lección principal es que, cuando se quiere trabajar con grandes volúmenes de información, pero no se cuenta con los equipos necesarios para ello, es necesario aplicar métodos que sean capaces de procesar los datos de forma eficiente sin perder la mayor cantidad de información posible (como componentes principales). Igualmente, estas relaciones complejas de los datos hacen que la selección del modelo deba ser cuidadosa, ya que si bien se puden implementar modelos más sencillos, que a su vez serán más eficientes, estos pueden no capturar las relaciones adecuadas de los datos y por ello prsentar buenos desempeños. Mientras que, otros modelos que si son capaces de capturar estas relaciones, pueden ser demasiados complejos y poco eficientes computacionalmente.
+
 Por ello hay que encontrar un euqilibrio entre eficiencia y desempeño.
+
 - Recomendaciones para futuros proyectos de machine learning.
+  
 Trabajar los datos de forma más eficiente desde el principio, y tal vez centrarse en conjuntos de datos menos complejos y que se puedan adaptar mejor al equipo del que uno disponga, para sacar el mayor provecho a la información disponible.
 
 ## Impacto del proyecto
 
 - Descripción del impacto del modelo en el negocio o en la industria.
+  
 Si bien el modelo no presenta un desempeño excepcional, si se puede usar como una herramienta complementaria en la industria aeronautica, así como para los clientes de la misma, al momento de predecir qué vuelos llegaran o no atrasados. Esto para poder optimizar, por ejemplo, rutas de vuelo y mejorar el flujo del tráfico aério y aeroportuario. 
+
 - Identificación de las áreas de mejora y oportunidades de desarrollo futuras.
+  
 A futuro, lo ideal seria poder trabajar con la totalidad de los datos, de forma que se puedan capturar las relaciones de los datos de forma más precisa y poder implementar modelos muchos más complejos. Esto permitirá sin duda alguna realizar predicciones mucho más precisas y confliables.
 
 ## Conclusiones
 
 - Resumen de los resultados y principales logros del proyecto.
+  
 El principal logro de este proyecto es que, si bien no se realizaron predicciones tan precisas como se esperaba, si se logró obtener un modelo con un desempeño aceptable, logro que es aun más importante al tener en cuenta las grandes limitaciones brindadas por los datos y por los equipos con los que se contaba.
+
 - Conclusiones finales y recomendaciones para futuros proyectos.
+  
 El modelo de Random Forest es el más adecuado para predecir qué vuelos llegaran atrasados y qué vuelos no. Este modelo presenta un buen desempeño en cuanto a predicciones generales, aunque tiene dificultades para predecir correctamente los vuelos atrasados (más que los puntuales). Para futuros proyectos, se debe trabajar los datos de forma más eficiente y, de ser posible, contar con mejores equipos para implementar modelos más complejos, aprovechar al máximo la información disponible y poder realizar predicciones mucho más confiables.
 
