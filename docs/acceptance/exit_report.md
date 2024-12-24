@@ -7,9 +7,11 @@ Durante este proyecto se buscó, por medio de distintos métodos y modelos, pred
 ## Resultados del proyecto
 
 - Resumen de los entregables y logros alcanzados en cada etapa del proyecto.
+  
 A lo largo de las distintas etapas recuperamos la rica base de datos de la página kaggle, revisando las múltiples variables con las que contabamos (tipo de aeronave, ciudad y tiempo de salida, ciudad y tiempo de llegada, fecha, etc), para entender cuáles podiamos útilizar para nuestro propósito, cuáles no, y qué transformaciones debian realizarse para utilizarlos de la forma más eficiente posible.
 Igualmente, dada la gran cantidad de variables explicativas, utilizamos componentes principales antes de entrenar los modelos, para así poder mejorar la eficiencia computacional. Apartir de allí establecimos un modelo baseline, el cual fue regresión logística. Lo comparamos con otros dos modelos, Random Forest y Gradient Boosting, llegando a la conclusión que el mejor modelo fue Random Forest.
 Finalmente, realizamos el despliegue del modelo por medio de Flask, tal que fuera posible para un usuario proveer caracteristicas específicas de un vuelo para predecir si este llegaria con retraso o no. 
+
 - Evaluación del modelo final y comparación con el modelo base.
   
 El modelo final, es decir, el Random Forest presentó las siguientes métricas:
